@@ -4,6 +4,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./features/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -14,6 +15,7 @@ module.exports = {
       },
       colors: {
         primary: "var(--color-primary)",
+        "primary-dark": "var(--color-primary-dark)",
         "primary-text": "var(--color-primary-text)",
         secondary: "var(--color-secondary)",
         "secondary-text": "var(--color-secondary-text)",

@@ -5,6 +5,7 @@
 @layer base {
   html {
     --color-primary: #d3ca28;
+    --color-primary-dark:#E0CF1E;
     --color-primary-text: #ffffff;
     --color-secondary: #36301f;
     --color-secondary-text: #ffffff;
