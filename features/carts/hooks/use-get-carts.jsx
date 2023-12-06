@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { fetchCarts } from "@/lib/store/features/carts/cartsSlice";
+import { fetchCarts } from "@/features/carts/slice/cartsSlice";
 
-export function useGetCarts() {
+export async function useGetCarts() {
   const dispatch = useDispatch();
 
   useEffect(() => {

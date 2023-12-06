@@ -1,4 +1,4 @@
-import { addToCarts, selectCarts } from "@/lib/store/features/carts/cartsSlice";
+import { addToCarts, selectCarts } from "@/features/carts/slice/cartsSlice";
 import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 

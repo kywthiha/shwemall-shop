@@ -6,6 +6,7 @@ import Link from "next/link";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { prefetchProducts } from "@/features/products/hooks/use-get-products";
 import { Button } from "@/features/ui/button";
+import { setData } from "@/lib/utils/storage-utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export async function getServerSideProps() {
 export default function Home({ dehydratedState }) {
   const changeTheme = (theme) => {
     document.querySelector("html")?.setAttribute("data-theme", theme);
+    setData("data-theme", theme);
   };
 
   const intl = useIntl();

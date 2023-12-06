@@ -1,15 +1,15 @@
-import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { getProductDetail } from "@/api/products";
 import { ProductDetail } from "@/features/product-detail/components/product-detail";
+import { NextSeo } from "next-seo";
 
-export async function getServerSideProps(context) {
-  if (context?.query?.slug?.length < 2) {
+export async function getServerSideProps({ res, query }) {
+  if (query?.slug?.length < 2) {
     return {
       notFound: true,
     };
   }
 
-  const [productCode, productName] = context.query.slug;
+  const [productCode, productName] = query.slug;
   try {
     const product = await getProductDetail({ productCode });
     return {
@@ -27,9 +27,12 @@ export async function getServerSideProps(context) {
 
 export default function Index({ product, productName }) {
   return (
-    <main>
-      <h1>{productName}</h1>
-      <ProductDetail product={product} />
-    </main>
+    <>
+      <NextSeo title={productName} description={productName} />
+      <main>
+        <h1>{productName}</h1>
+        <ProductDetail product={product} />
+      </main>
+    </>
   );
 }

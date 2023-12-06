@@ -6,8 +6,8 @@ import en from "../lang/en.json";
 import my_MM from "../lang/my-MM.json";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { useGetCarts } from "@/features/carts/hooks/use-get-carts";
 import StoreProvider from "@/lib/store/StoreProvider";
+import Script from "next/script";
 
 const messages = {
   en,
@@ -34,6 +34,9 @@ export default function App({ Component, pageProps }) {
       <IntlProvider locale={locale} messages={messages[locale]}>
         <QueryClientProvider client={queryClient}>
           <Component {...pageProps} />
+          <Script id="data-theme" strategy="beforeInteractive">
+            {` document.querySelector("html")?.setAttribute("data-theme", localStorage.getItem("data-theme"))`}
+          </Script>
           <ReactQueryDevtools initialIsOpen={true} />
         </QueryClientProvider>
       </IntlProvider>

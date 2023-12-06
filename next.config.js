@@ -9,7 +9,10 @@ const nextConfig = {
     localeDetection: false,
   },
   images: {
-    domains: ['picsum.photos','13.228.29.1','localhost'],
+    domains: ["picsum.photos", "13.228.29.1", "localhost", "172.16.0.71"],
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
   },
 };
 
