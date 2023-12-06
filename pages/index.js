@@ -5,7 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { prefetchProducts } from "@/features/products/hooks/use-get-products";
-import { Button } from "@/features/ui/button";
+import { Button } from "@/features/ui/Button";
 import { setData } from "@/lib/utils/storage-utils";
 
 const inter = Inter({ subsets: ["latin"] });

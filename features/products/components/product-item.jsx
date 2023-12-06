@@ -1,4 +1,4 @@
-import { Button } from "@/features/ui/button";
+import { Button } from "@/features/ui/Button";
 import Image from "next/image";
 import Link from "next/link";
 import { useProductCarts } from "../hooks/use-product-cart";
